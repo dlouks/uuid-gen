@@ -1,2 +1,2 @@
-psycopg=3.1.8
+psycopg==3.1.8
 fastapi==0.63.0
