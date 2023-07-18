@@ -15,7 +15,6 @@ class Settings(BaseSettings):
 @app.get("/api/generate/v1")
 async def root():
     settings = Settings()
-    print(settings.dbpassword)
     connection = psycopg2.connect(user=settings.dbuser,
                                   password=settings.dbpassword,
                                   host=settings.host,
