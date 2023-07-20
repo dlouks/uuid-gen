@@ -2,12 +2,13 @@ from fastapi import FastAPI
 import psycopg2
 from pydantic import PostgresDsn
 from pydantic_settings import BaseSettings, SettingsConfigDict
+import os
 
 app = FastAPI()
 
 class Settings(BaseSettings):
     dbuser: str = "uuidgen"
-    dbpassword: str = ""
+    dbpassword: str = os.getenv('DB_PASSWORD')
     host: str = "database-1-instance-1.c7mqgpfkwe5m.us-east-1.rds.amazonaws.com"
     dbname: str = "uuidgen"
     port: str = "5432"
